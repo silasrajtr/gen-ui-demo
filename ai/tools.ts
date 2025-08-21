@@ -131,6 +131,6 @@ export const interactiveQuestionTool = createTool({
 export const tools = {
   displayWeather: weatherTool,
   getStockPrice: stockTool,
-  generateClarifyingQuestions: clarifyingQuestionsTool,
+  // generateClarifyingQuestions: clarifyingQuestionsTool,
   askInteractiveQuestion: interactiveQuestionTool,
 };
