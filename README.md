@@ -104,7 +104,7 @@ Instead of forcing chatbots to guess or making users type long clarifications, t
 **NOTE:**
 
 There's a room for improvement on my working demo and I'm working on it. like:
-- Total UI. Everything!.
+- Total UI. Everything!
 - Multiple options selection.
 - Include a free-text field below the choices in case none of them feel relatable to the user.
 
