@@ -19,11 +19,12 @@ npm install
 ## API Provider
 
 This project currently uses the **Groq API** for running LLMs. 
-to get a Groq api key - [click here](https://console.groq.com/keys).
 
-Refer to `.env.example` and create a `.env.local` file inside the root folder, paste the groq api key to the GROQ_API_KEY variable and you're good to go.
+To get a free Groq api key - [click here](https://groq.com/).
 
-If you want to switch and use **OpenAI models** instead, you can update the code in:
+Refer to `.env.example` and create a `.env.local` file inside the root folder, paste the groq api key to the `GROQ_API_KEY` variable and you're good to go.
+
+If you want to switch to any other [provider](https://ai-sdk.dev/docs/foundations/providers-and-models) instead, you can update the code for [streamText](https://ai-sdk.dev/docs/reference/ai-sdk-core/stream-text#streamtext) in the below file.
 
 ```
 gen-ui-demo/app/api/chat/route.ts
@@ -48,7 +49,7 @@ This repo shows a basic generative UI implementation using AI SDK. While in acti
 This is what I mean by *generating question-options as clickable UI components* 👇  
 
 
-Example of an unclear request and how humans naturally respond when missing details:
+See this example of a question with poor context and how humans naturally respond when missing details:
 
 
 `How can I get a job?`
@@ -68,8 +69,9 @@ Example of an unclear request and how humans naturally respond when missing deta
 
 Now, here’s the funny part:  
 Chatbots nowadays carry this **burden of giving the perfect response on the very first try.** So most of the time, they shoot back something like:
-```
 
+
+```
 That’s awesome!! 🎉🔥, Here’s what you can do right now:
 
 ✅ Polish up your resume so it really shines.
@@ -77,22 +79,37 @@ That’s awesome!! 🎉🔥, Here’s what you can do right now:
 ✅ Get your LinkedIn and other profiles active and engaging.
 
 ✅ Start applying consistently—momentum is key.
-
 ```
+
 
 
 Sometimes chatbots do ask things back. But then we have to type the response again to guide them.  
 
-This is *token intensive* and *time consuming.*
+> This is *token intensive* and *time consuming.*
 
 
 My approach is a little different. 
 
 Instead of wasting cycles, I make the agent check for ambiguity in user inputs and trigger an `interactiveQuestionTool`. This tool generates a question with multiple options and sends it to the front-end.  
 
-The front-end then shows it as a quiz-like interactive UI component 📝 where the user just clicks instead of typing.  
+The front-end then shows it as a quiz-like interactive UI component where the user just clicks instead of typing.  
 
 This way, it’s faster, cheaper, and way more intuitive. That’s the whole idea of Generative UI powered by AI SDK.  
+
+**TL;DR**  
+
+
+Instead of forcing chatbots to guess or making users type long clarifications, this project makes the bot detect ambiguity and auto-generate multiple-choice style questions. The user just clicks → faster, cheaper, and more natural. That’s Generative UI with AI SDK.  
+
+**NOTE:**
+
+There's a room for improvement on my working demo and I'm working on it. like:
+- Total UI. Everything!.
+- Multiple options selection.
+- Include a free-text field below the choices in case none of them feel relatable to the user.
+
+
+
 
 ## Learn More
 
