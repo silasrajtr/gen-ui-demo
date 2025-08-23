@@ -70,6 +70,7 @@ See this example of a question with poor context and how humans naturally respon
 Now, here’s the funny part:  
 Chatbots nowadays carry this **burden of giving the perfect response on the very first try.** So most of the time, they shoot back something like:
 
+`How can I get a job?`
 
 ```
 That’s awesome!! 🎉🔥, Here’s what you can do right now:
